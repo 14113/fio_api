@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Robin Bortlik"]
-  s.date = "2012-11-29"
+  s.date = "2012-12-06"
   s.description = "API wrapper for FIO bank"
   s.email = "robinbortlik@gmail.com"
   s.extra_rdoc_files = [
@@ -17,16 +17,32 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    ".document",
     ".rspec",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "fio_api.gemspec",
+    "lib/base.rb",
+    "lib/base/account.rb",
+    "lib/base/deserializer.rb",
+    "lib/base/deserializers/list_response_deserializer.rb",
+    "lib/base/list.rb",
+    "lib/base/request.rb",
+    "lib/base/transaction.rb",
     "lib/fio_api.rb",
+    "lib/utils/hash.rb",
+    "spec/base/account_spec.rb",
+    "spec/base/deserializer_spec.rb",
+    "spec/base/deserializers/list_response_deserializer_spec.rb",
+    "spec/base/list_spec.rb",
+    "spec/base/request_spec.rb",
+    "spec/base/transaction_spec.rb",
     "spec/fio_api_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/spec_helper.rb",
+    "spec/utils/hash_spec.rb"
   ]
   s.homepage = "http://github.com/robinbortlik/fio_api"
   s.licenses = ["MIT"]
@@ -40,12 +56,14 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<httparty>, ["= 0.9.0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
+      s.add_development_dependency(%q<rspec-mocks>, ["~> 2.8.0"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_development_dependency(%q<bundler>, ["~> 1.2.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
     else
       s.add_dependency(%q<httparty>, ["= 0.9.0"])
       s.add_dependency(%q<rspec>, ["~> 2.8.0"])
+      s.add_dependency(%q<rspec-mocks>, ["~> 2.8.0"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_dependency(%q<bundler>, ["~> 1.2.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
@@ -53,6 +71,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<httparty>, ["= 0.9.0"])
     s.add_dependency(%q<rspec>, ["~> 2.8.0"])
+    s.add_dependency(%q<rspec-mocks>, ["~> 2.8.0"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
     s.add_dependency(%q<bundler>, ["~> 1.2.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
