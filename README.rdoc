@@ -1,0 +1,44 @@
+= Fio API
+
+This project rocks and uses MIT-LICENSE.
+
+This gem is a wrapper for Fio bank API. Currently Fio API support only data listing, so you can make only a requests to get all your money transaction in some date range.
+
+== Usage
+
+=== Add to your gemfile
+  gem 'fio_api'
+
+=== Setup API token
+  FioAPI.token = "8JSKJ823DN86YRH87UIRUI2363ND5xcr3"
+
+=== Request transactions in date range 2012-11-05 and 2012-12-26
+  list = FioAPI::List.new                                         # Create new listing request
+  list.by_date_range(Date.new(2012,11,05), Date.new(2012,12,26))  # Specify listing condition and fetch request
+  list.response                                                   # Return deserialized response
+
+=== Request transactions by listing_id and year
+  list = FioAPI::List.new
+  list.by_listing_id_and_year("43XC6362ASD", 2012)
+  list.response
+
+=== Request to set last request id
+  list = FioAPI::List.new
+  list.set_last_fetch_id("SHXG738377834")
+  list.response
+
+=== Request to set last request date
+  list = FioAPI::List.new
+  list.set_last_fetch_date(Date.new(2012,11,05))
+  list.response
+
+
+== Contributing to fio_api
+
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
+* Fork the project.
+* Start a feature/bugfix branch.
+* Commit and push until you are happy with your contribution.
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
