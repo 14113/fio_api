@@ -1,3 +1,4 @@
+{<img src="https://secure.travis-ci.org/robinbortlik/fio_api.png?branch=master" alt="Build Status" />}[http://travis-ci.org/robinbortlik/fio_api]
 = Fio API
 
 This project rocks and uses MIT-LICENSE.
