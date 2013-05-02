@@ -58,7 +58,7 @@ module FioAPI
     #
     # https://www.fio.cz/ib_api/rest/set-last-id/(token)/(id)/
     def set_last_fetch_id(transaction_id)
-      fetch_and_deserialize_response('set-last-id', FioAPI.token, transaction_id)
+      fetch_and_deserialize_response('set-last-id', FioAPI.token, transaction_id, "/")
     end
 
     # Allow request to set last request date
@@ -72,7 +72,7 @@ module FioAPI
     #
     # https://www.fio.cz/ib_api/rest/set-last-date/(token)/(rrrr-mm-dd)/
     def set_last_fetch_date(date)
-      fetch_and_deserialize_response('set-last-date', FioAPI.token, date)
+      fetch_and_deserialize_response('set-last-date', FioAPI.token, date, "/")
     end
 
     private
