@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "fio_api"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Robin Bortlik"]
-  s.date = "2012-12-06"
+  s.date = "2013-05-02"
   s.description = "API wrapper for FIO bank"
   s.email = "robinbortlik@gmail.com"
   s.extra_rdoc_files = [
@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".rspec",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -47,7 +48,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/robinbortlik/fio_api"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.25"
   s.summary = "API wrapper for FIO bank"
 
   if s.respond_to? :specification_version then
