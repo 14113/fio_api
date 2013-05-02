@@ -27,13 +27,13 @@ describe FioAPI::List do
 
   it "should set request with uri to set last fetch id" do
     id = "12345"
-    url = "https://www.fio.cz/ib_api/rest/set-last-id/#{FioAPI.token}/#{id}"
+    url = "https://www.fio.cz/ib_api/rest/set-last-id/#{FioAPI.token}/#{id}/"
     @list.set_last_fetch_id(id).request.uri.should eq url
   end
 
   it "should set request with uri to set last date" do
     date = Date.new(2012,11,25)
-    url = "https://www.fio.cz/ib_api/rest/set-last-date/#{FioAPI.token}/#{date}"
+    url = "https://www.fio.cz/ib_api/rest/set-last-date/#{FioAPI.token}/#{date}/"
     @list.set_last_fetch_date(date).request.uri.should eq url
   end
 
