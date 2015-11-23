@@ -9,7 +9,7 @@ describe FioAPI::Transaction do
     :sender, :detail_info, :comment, :bic, :action_id].each do |attr|
 
       it "should respond to #{attr}" do
-        FioAPI::Transaction.new.should respond_to(attr)
+        expect(FioAPI::Transaction.new).to respond_to(attr)
       end
 
     end

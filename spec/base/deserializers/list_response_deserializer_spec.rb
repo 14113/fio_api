@@ -5,11 +5,11 @@ describe FioAPI::ListResponseDeserializer do
   describe "instance attributes" do
 
     it "should respond to account" do
-      FioAPI::ListResponseDeserializer.new.should respond_to(:account)
+      expect(FioAPI::ListResponseDeserializer.new).to respond_to(:account)
     end
 
     it "should respond to transactions" do
-      FioAPI::ListResponseDeserializer.new.should respond_to(:transactions)
+      expect(FioAPI::ListResponseDeserializer.new).to respond_to(:transactions)
     end
 
   end
@@ -34,7 +34,7 @@ describe FioAPI::ListResponseDeserializer do
       deserialized =  @deserializer.send(:deserialize_account, account_json)
 
       result.each do |attr_name,value|
-        deserialized.send(attr_name).should eq(value)
+        expect(deserialized.send(attr_name)).to eq(value)
       end
     end
 
@@ -73,15 +73,15 @@ describe FioAPI::ListResponseDeserializer do
       deserialized = @deserializer.send(:deserialize_transactions, [transaction_json])[0]
 
       result.each do |attr_name,value|
-        deserialized.send(attr_name).should eq(value)
+        expect(deserialized.send(attr_name)).to eq(value)
       end
     end
 
     it "should return deserializer object with account and transactions" do
       @deserializer.deserialize({"accountStatement" => {"transactionList" => {"transaction" => [{}] }}} )
-      @deserializer.account.class.should eq FioAPI::Account
-      @deserializer.transactions.class.should eq Array
-      @deserializer.transactions.first.class.should eq FioAPI::Transaction
+      expect(@deserializer.account.class).to eq FioAPI::Account
+      expect(@deserializer.transactions.class).to eq Array
+      expect(@deserializer.transactions.first.class).to eq FioAPI::Transaction
     end
   end
 end

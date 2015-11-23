@@ -8,7 +8,7 @@ describe FioAPI::Account do
     :date_start, :date_end, :year_list, :id_list, :id_from, :id_to, :id_last_download].each do |attr|
 
       it "should respond to #{attr}" do
-        FioAPI::Account.new.should respond_to(attr)
+        expect(FioAPI::Account.new).to respond_to(attr)
       end
 
     end
