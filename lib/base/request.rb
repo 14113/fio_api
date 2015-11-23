@@ -26,7 +26,7 @@ module FioAPI
     #   Request instance
     #
     def fetch
-      self.response_json = HTTParty.get(uri).to_hash
+      self.response_json = HTTParty.get(uri, format: :json)
       self
     end
 
