@@ -1,9 +1,20 @@
+require 'httparty'
+
 module FioAPI
   # == ListResponseDeserializer
   # Deserializer responsible for response json deserializing. Should construct object with account and transactions attributes.
   #
-  class ListResponseDeserializer < FioAPI::Deserializer
+  class ListResponseDeserializer < HTTParty::Parser
     attr_accessor :account, :transactions
+
+    # Parse json
+    #
+    # == Returns:
+    #   Should return new deserialized object
+    #
+    def parse
+      deserialize super
+    end
 
     # Deserialize json
     #

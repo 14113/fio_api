@@ -18,7 +18,7 @@ module FioAPI
     #
     # https://www.fio.cz/ib_api/rest/periods/(token)/(date_from)/(date_to)/transactions.(format)
     def by_date_range(from_date, to_date)
-      fetch_and_deserialize_response('periods', FioAPI.token, from_date, to_date, 'transactions.json')
+      fetch_and_deserialize_response("/periods/#{FioAPI.token}/#{from_date}/#{to_date}/transactions.json")
     end
 
     # Allow request transactions by listing_id and year
@@ -34,7 +34,7 @@ module FioAPI
     #
     # https://www.fio.cz/ib_api/rest/by-id/(token)/(year)/(id)/transactions.(format)
     def by_listing_id_and_year(listing_id, year)
-      fetch_and_deserialize_response('by-id', FioAPI.token, year, listing_id, 'transactions.json')
+      fetch_and_deserialize_response("/by-id/#{FioAPI.token}/#{year}/#{listing_id}/transactions.json")
     end
 
     # Allow request transactions from last request
@@ -44,7 +44,7 @@ module FioAPI
     #
     # https://www.fio.cz/ib_api/rest/last/(token)/transactions.(format)
     def from_last_fetch
-      fetch_and_deserialize_response('last', FioAPI.token, 'transactions.json')
+      fetch_and_deserialize_response("/last/#{FioAPI.token}/transactions.json")
     end
 
     # Allow request to set last transaction_id
@@ -58,7 +58,7 @@ module FioAPI
     #
     # https://www.fio.cz/ib_api/rest/set-last-id/(token)/(id)/
     def set_last_fetch_id(transaction_id)
-      fetch_and_deserialize_response('set-last-id', FioAPI.token, transaction_id, "/")
+      fetch_and_deserialize_response("/set-last-id/#{FioAPI.token}/#{transaction_id}/")
     end
 
     # Allow request to set last request date
@@ -72,7 +72,7 @@ module FioAPI
     #
     # https://www.fio.cz/ib_api/rest/set-last-date/(token)/(rrrr-mm-dd)/
     def set_last_fetch_date(date)
-      fetch_and_deserialize_response('set-last-date', FioAPI.token, date, "/")
+      fetch_and_deserialize_response("/set-last-date/#{FioAPI.token}/#{date}/")
     end
 
     private
@@ -87,12 +87,10 @@ module FioAPI
     # == Returns:
     #   List insatnce with account info and transactions list
     #
-    def fetch_and_deserialize_response(*args)
-      self.request = FioAPI::Request.new(deserializer: FioAPI::ListResponseDeserializer.new())
-      self.request.set_uri(*args)
-      self.request.fetch
-      self.response = self.request.response
-      self
+    def fetch_and_deserialize_response(path)
+      self.request = FioAPI::Request.get(path, :parser=>ListResponseDeserializer)
+      self.response = self.request.parsed_response
+      self.request
     end
 
   end

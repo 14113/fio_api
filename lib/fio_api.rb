@@ -1,6 +1,5 @@
 require "utils/hash"
 require "base"
-require "base/deserializer"
 require "base/account"
 require "base/transaction"
 require "base/list"

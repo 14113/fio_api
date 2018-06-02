@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.fio.cz/ib_api/rest/by-id/<%= FioAPI.token %>/2012/12345/transactions.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Sat, 02 Jun 2018 21:21:47 GMT
+      Server:
+      - Apache-Coyote/1.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Intervalusetoken:
+      - '20000'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '338'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PgoKPHJlc3BvbnNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhzaTpub05hbWVzcGFjZVNjaGVtYUxvY2F0aW9uPSJodHRwczovL3d3dy5maW8uY3ovc2NoZW1hL3Jlc3BvbnNlLnhzZCI+Cgk8cmVzdWx0PiAKCQk8ZXJyb3JDb2RlPjIxPC9lcnJvckNvZGU+CgkJPHN0YXR1cz5lcnJvcjwvc3RhdHVzPgoJCTxtZXNzYWdlPlbDvXBpcyBuZWV4aXN0dWplPC9tZXNzYWdlPgoJCTxkZXRhaWw+PC9kZXRhaWw+Cgk8L3Jlc3VsdD4KPC9yZXNwb25zZT4=
+    http_version:
+  recorded_at: Sat, 02 Jun 2018 21:21:47 GMT
+recorded_with: VCR 4.0.0

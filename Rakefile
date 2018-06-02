@@ -15,12 +15,12 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "fio_api"
-  gem.homepage = "http://github.com/robinbortlik/fio_api"
+  gem.homepage = "http://github.com/14113/fio_api"
   gem.license = "MIT"
   gem.summary = %Q{API wrapper for FIO bank}
   gem.description = %Q{API wrapper for FIO bank}
-  gem.email = "robinbortlik@gmail.com"
-  gem.authors = ["Robin Bortlik"]
+  gem.email = "a.martinik@gmail.com"
+  gem.authors = ["Robin Bortlik", "Adam Martinik"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
