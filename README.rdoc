@@ -1,5 +1,5 @@
-{<img src="https://secure.travis-ci.org/robinbortlik/fio_api.png?branch=master" alt="Build Status" />}[http://travis-ci.org/robinbortlik/fio_api]
-{<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/robinbortlik/fio_api]
+{<img src="https://travis-ci.org/14113/fio_api.svg?branch=master" alt="Build Status" />}[http://travis-ci.org/14113/fio_api]
+{<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/14113/fio_api]
 = Fio API
 
 This project rocks and uses MIT-LICENSE.
