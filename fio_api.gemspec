@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Robin Bortlik".freeze, "Adam Martinik".freeze]
-  s.date = "2018-06-02"
+  s.date = "2018-06-03"
   s.description = "API wrapper for FIO bank".freeze
   s.email = "a.martinik@gmail.com".freeze
   s.extra_rdoc_files = [
@@ -41,6 +41,11 @@ Gem::Specification.new do |s|
     "spec/base/request_spec.rb",
     "spec/base/transaction_spec.rb",
     "spec/fio_api_spec.rb",
+    "spec/fixtures/vcr_cassettes/by_date_range.yml",
+    "spec/fixtures/vcr_cassettes/by_listing_id_and_year.yml",
+    "spec/fixtures/vcr_cassettes/from_last_fetch.yml",
+    "spec/fixtures/vcr_cassettes/set_last_fetch_date.yml",
+    "spec/fixtures/vcr_cassettes/set_last_fetch_id.yml",
     "spec/spec_helper.rb",
     "spec/utils/hash_spec.rb"
   ]

@@ -1,5 +1,3 @@
-require "base/deserializers/list_response_deserializer"
-
 module FioAPI
   # Base class for request to transactions listing and account information
   class List < FioAPI::Base

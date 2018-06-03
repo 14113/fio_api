@@ -4,7 +4,7 @@
 
 This project rocks and uses MIT-LICENSE.
 
-This gem is a wrapper for Fio bank API. Currently Fio API support only data listing, so you can make only a requests to get all your money transaction in some date range.
+This gem is a wrapper for Fio bank API.
 
 == Usage
 
@@ -34,6 +34,11 @@ This gem is a wrapper for Fio bank API. Currently Fio API support only data list
   list.set_last_fetch_date(Date.new(2012,11,05))
   list.response
 
+=== Import domestic payments for authorization
+  domestic = FioAPI::Payments::Domestic.new(***)                  # Create new payment
+  service = FioAPI::Payment.new domestic                          # Pass one payment or array of payments
+  service.import                                                  # Call API
+  service.response                                                # Return deserialized response with status code etc.
 
 == Contributing to fio_api
 
