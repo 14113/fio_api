@@ -26,7 +26,7 @@ module FioAPI
     #   New object with status attributes
     #
     def deserialize(json)
-      self.status = deserialize_import(json.try_path("responseImport", "result"))
+      self.status = deserialize_import(json.try_path('responseImport', 'result'))
       self
     end
 
@@ -40,11 +40,11 @@ module FioAPI
     #   Status
     def deserialize_import(response_json)
       FioAPI::Payments::Status.new(
-        error_code: response_json.try_path("errorCode").to_i,
+        error_code: response_json.try_path('errorCode').to_i,
         error_message: response_json.try_path('message').to_s,
-        id_instruction: response_json.try_path("idInstruction").to_i,
-        sum_credit: response_json.try_path("sums","sum","sumCredit").to_f,
-        sum_debet: response_json.try_path("sums", "sum", "sumDebet").to_f
+        id_instruction: response_json.try_path('idInstruction').to_i,
+        sum_credit: response_json.try_path('sums', 'sum', 'sumCredit').to_f,
+        sum_debet: response_json.try_path('sums', 'sum', 'sumDebet').to_f
       )
     end
   end

@@ -29,21 +29,34 @@ Gem::Specification.new do |s|
     "fio_api.gemspec",
     "lib/base.rb",
     "lib/base/account.rb",
+    "lib/base/deserializers/import_response_deserializer.rb",
     "lib/base/deserializers/list_response_deserializer.rb",
     "lib/base/list.rb",
+    "lib/base/payment.rb",
+    "lib/base/payments/domestic.rb",
+    "lib/base/payments/status.rb",
+    "lib/base/payments/xml/item.rb",
+    "lib/base/payments/xml/root.rb",
     "lib/base/request.rb",
     "lib/base/transaction.rb",
     "lib/fio_api.rb",
     "lib/utils/hash.rb",
     "spec/base/account_spec.rb",
+    "spec/base/deserializers/import_response_deserializer_spec.rb",
     "spec/base/deserializers/list_response_deserializer_spec.rb",
     "spec/base/list_spec.rb",
+    "spec/base/payment_spec.rb",
+    "spec/base/payments/domestic_spec.rb",
+    "spec/base/payments/status_spec.rb",
+    "spec/base/payments/xml/root_spec.rb",
     "spec/base/request_spec.rb",
     "spec/base/transaction_spec.rb",
     "spec/fio_api_spec.rb",
     "spec/fixtures/vcr_cassettes/by_date_range.yml",
     "spec/fixtures/vcr_cassettes/by_listing_id_and_year.yml",
     "spec/fixtures/vcr_cassettes/from_last_fetch.yml",
+    "spec/fixtures/vcr_cassettes/import.yml",
+    "spec/fixtures/vcr_cassettes/invalid_import.yml",
     "spec/fixtures/vcr_cassettes/set_last_fetch_date.yml",
     "spec/fixtures/vcr_cassettes/set_last_fetch_id.yml",
     "spec/spec_helper.rb",
@@ -59,32 +72,32 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<httparty>.freeze, [">= 0.16.2"])
-      s.add_development_dependency(%q<vcr>.freeze, [">= 0"])
-      s.add_development_dependency(%q<webmock>.freeze, [">= 0"])
-      s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
-      s.add_development_dependency(%q<rspec-mocks>.freeze, [">= 3.4.0"])
-      s.add_development_dependency(%q<rdoc>.freeze, [">= 4.2.0"])
       s.add_development_dependency(%q<bundler>.freeze, [">= 1.10.6"])
       s.add_development_dependency(%q<jeweler>.freeze, [">= 2.0.1"])
+      s.add_development_dependency(%q<rdoc>.freeze, [">= 4.2.0"])
+      s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
+      s.add_development_dependency(%q<rspec-mocks>.freeze, [">= 3.4.0"])
+      s.add_development_dependency(%q<vcr>.freeze, [">= 0"])
+      s.add_development_dependency(%q<webmock>.freeze, [">= 0"])
     else
       s.add_dependency(%q<httparty>.freeze, [">= 0.16.2"])
-      s.add_dependency(%q<vcr>.freeze, [">= 0"])
-      s.add_dependency(%q<webmock>.freeze, [">= 0"])
-      s.add_dependency(%q<rspec>.freeze, [">= 0"])
-      s.add_dependency(%q<rspec-mocks>.freeze, [">= 3.4.0"])
-      s.add_dependency(%q<rdoc>.freeze, [">= 4.2.0"])
       s.add_dependency(%q<bundler>.freeze, [">= 1.10.6"])
       s.add_dependency(%q<jeweler>.freeze, [">= 2.0.1"])
+      s.add_dependency(%q<rdoc>.freeze, [">= 4.2.0"])
+      s.add_dependency(%q<rspec>.freeze, [">= 0"])
+      s.add_dependency(%q<rspec-mocks>.freeze, [">= 3.4.0"])
+      s.add_dependency(%q<vcr>.freeze, [">= 0"])
+      s.add_dependency(%q<webmock>.freeze, [">= 0"])
     end
   else
     s.add_dependency(%q<httparty>.freeze, [">= 0.16.2"])
-    s.add_dependency(%q<vcr>.freeze, [">= 0"])
-    s.add_dependency(%q<webmock>.freeze, [">= 0"])
-    s.add_dependency(%q<rspec>.freeze, [">= 0"])
-    s.add_dependency(%q<rspec-mocks>.freeze, [">= 3.4.0"])
-    s.add_dependency(%q<rdoc>.freeze, [">= 4.2.0"])
     s.add_dependency(%q<bundler>.freeze, [">= 1.10.6"])
     s.add_dependency(%q<jeweler>.freeze, [">= 2.0.1"])
+    s.add_dependency(%q<rdoc>.freeze, [">= 4.2.0"])
+    s.add_dependency(%q<rspec>.freeze, [">= 0"])
+    s.add_dependency(%q<rspec-mocks>.freeze, [">= 3.4.0"])
+    s.add_dependency(%q<vcr>.freeze, [">= 0"])
+    s.add_dependency(%q<webmock>.freeze, [">= 0"])
   end
 end
 

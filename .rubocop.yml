@@ -1,0 +1,26 @@
+AllCops:
+  Include:
+    - '**/Gemfile'
+    - '**/Rakefile'
+  Exclude:
+    - 'fio_api.gemspec'
+Metrics/LineLength:
+  Max: 180
+Documentation:
+  Enabled: false
+Metrics/AbcSize:
+  Max: 38
+Metrics/MethodLength:
+  Max: 50
+Metrics/BlockLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Max: 7
+Metrics/ClassLength:
+  Max: 230
+Metrics/ModuleLength:
+  Max: 230
+Style/FileName:
+  Enabled: true
+  Exclude:
+    - Guardfile

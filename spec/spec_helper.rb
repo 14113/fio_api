@@ -6,15 +6,14 @@ require 'vcr'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
-FioAPI.token = "somelongtoken"
+FioAPI.token = 'somelongtoken'
 
 RSpec.configure do |config|
-
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
 end

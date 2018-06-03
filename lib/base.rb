@@ -9,12 +9,8 @@ module FioAPI
     # == Returns:
     #   New object with prefilled attributes
     #
-    def initialize(*h)
-      if h.length == 1 && h.first.kind_of?(Hash)
-        h.first.each { |k,v| send("#{k}=",v) }
-      end
+    def initialize(*hash)
+      hash.first.each { |k, v| send("#{k}=", v) } if hash.length == 1 && hash.first.is_a?(Hash)
     end
-
   end
 end
-

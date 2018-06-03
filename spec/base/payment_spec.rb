@@ -1,4 +1,4 @@
-require_relative "../spec_helper"
+require_relative '../spec_helper'
 
 describe FioAPI::Payment do
   before(:each) do
@@ -8,7 +8,7 @@ describe FioAPI::Payment do
 
   context 'payment with valid data' do
     let(:amount) { 100.0 }
-    it "should make request" do
+    it 'should make request' do
       VCR.use_cassette 'import', erb: true do
         expect(@service.import).to be_a HTTParty::Response
         expect(@service.request).to be_a HTTParty::Response
@@ -16,14 +16,14 @@ describe FioAPI::Payment do
       end
     end
 
-    it "should build path" do
+    it 'should build path' do
       expect(@service.path).to eq "/import/?token=#{FioAPI.token}&type=xml"
     end
   end
 
   context 'payment with invalid data' do
     let(:amount) { '' }
-    it "should make request" do
+    it 'should make request' do
       VCR.use_cassette 'invalid_import', erb: true do
         expect(@service.import).to be_a HTTParty::Response
         expect(@service.request).to be_a HTTParty::Response
@@ -31,7 +31,7 @@ describe FioAPI::Payment do
       end
     end
 
-    it "should build path" do
+    it 'should build path' do
       expect(@service.path).to eq "/import/?token=#{FioAPI.token}&type=xml"
     end
   end

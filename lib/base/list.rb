@@ -86,10 +86,9 @@ module FioAPI
     #   List insatnce with account info and transactions list
     #
     def fetch_and_deserialize_response(path)
-      self.request = FioAPI::Request.get(path, :parser=>ListResponseDeserializer)
-      self.response = self.request.parsed_response
-      self.request
+      self.request = FioAPI::Request.get(path, parser: ListResponseDeserializer)
+      self.response = request.parsed_response
+      request
     end
-
   end
 end

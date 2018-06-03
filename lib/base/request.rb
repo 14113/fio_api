@@ -7,14 +7,13 @@ module FioAPI
     base_uri 'https://www.fio.cz/ib_api/rest/'
 
     class << self
-
       # Reader for token
       def token
         @@token
       end
 
       # Setter for token
-      def token= token
+      def token=(token)
         @@token = token
       end
     end

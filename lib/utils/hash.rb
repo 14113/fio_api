@@ -10,13 +10,13 @@ class Hash
   #
   def try_path(*args)
     value = self
-    args.each{ |arg_name| value = value.nil? ? nil : value[arg_name] }
+    args.each { |arg_name| value = value.nil? ? nil : value[arg_name] }
     value
   end
 end
 
 class NilClass
-  def try_path(*args)
+  def try_path(*_args)
     nil
   end
 end
