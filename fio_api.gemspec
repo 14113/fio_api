@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".rspec",
+    ".rubocop.yml",
     ".travis.yml",
     "Gemfile",
     "LICENSE.txt",
@@ -73,7 +74,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<httparty>.freeze, [">= 0.16.2"])
       s.add_development_dependency(%q<bundler>.freeze, [">= 1.10.6"])
-      s.add_development_dependency(%q<jeweler>.freeze, [">= 2.0.1"])
+      s.add_development_dependency(%q<jeweler>.freeze, [">= 2.1.1"])
       s.add_development_dependency(%q<rdoc>.freeze, [">= 4.2.0"])
       s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
       s.add_development_dependency(%q<rspec-mocks>.freeze, [">= 3.4.0"])
@@ -82,7 +83,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<httparty>.freeze, [">= 0.16.2"])
       s.add_dependency(%q<bundler>.freeze, [">= 1.10.6"])
-      s.add_dependency(%q<jeweler>.freeze, [">= 2.0.1"])
+      s.add_dependency(%q<jeweler>.freeze, [">= 2.1.1"])
       s.add_dependency(%q<rdoc>.freeze, [">= 4.2.0"])
       s.add_dependency(%q<rspec>.freeze, [">= 0"])
       s.add_dependency(%q<rspec-mocks>.freeze, [">= 3.4.0"])
@@ -92,7 +93,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<httparty>.freeze, [">= 0.16.2"])
     s.add_dependency(%q<bundler>.freeze, [">= 1.10.6"])
-    s.add_dependency(%q<jeweler>.freeze, [">= 2.0.1"])
+    s.add_dependency(%q<jeweler>.freeze, [">= 2.1.1"])
     s.add_dependency(%q<rdoc>.freeze, [">= 4.2.0"])
     s.add_dependency(%q<rspec>.freeze, [">= 0"])
     s.add_dependency(%q<rspec-mocks>.freeze, [">= 3.4.0"])

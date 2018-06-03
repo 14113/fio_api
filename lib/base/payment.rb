@@ -31,7 +31,7 @@ module FioAPI
     end
 
     def file
-      file = Tempfile.new
+      file = Tempfile.new('fio')
       file.write xml
       file.rewind
       file
