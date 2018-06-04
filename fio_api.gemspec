@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Robin Bortlik".freeze, "Adam Martinik".freeze]
-  s.date = "2018-06-03"
+  s.date = "2018-06-04"
   s.description = "API wrapper for FIO bank".freeze
   s.email = "a.martinik@gmail.com".freeze
   s.extra_rdoc_files = [
