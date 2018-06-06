@@ -17,6 +17,10 @@ module FioAPI
       self.request
     end
 
+    def valid?
+      response.status&.error_code.zero?
+    end
+
     private
 
     def headers
