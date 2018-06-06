@@ -39,6 +39,7 @@ module FioAPI
     # == Returns:
     #   Status
     def deserialize_import(response_json)
+      return FioAPI::Payments::Status.new(error_code: 500) unless response_json
       FioAPI::Payments::Status.new(
         error_code: response_json.try_path('errorCode').to_i,
         error_message: response_json.try_path('message').to_s,

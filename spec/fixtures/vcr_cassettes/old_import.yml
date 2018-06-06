@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.fio.cz/ib_api/rest/import/?token=<%= FioAPI.token %>&type=xml
+    body:
+      encoding: UTF-8
+      string: "--------------------------YU5IeT1XYDoNHP6A\r\nContent-Disposition:
+        form-data; name=\"file\"; filename=\"fio20180606-86151-1fg6aja\"\r\nContent-Type:
+        application/octet-stream\r\n\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Import
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.fio.cz/schema/importIB.xsd\">\n
+        \ <Orders>\n    <DomesticTransaction>\n      <accountFrom>11111111</accountFrom>\n
+        \     <currency>CZK</currency>\n      <amount>100.0</amount>\n      <accountTo>22222222</accountTo>\n
+        \     <bankCode>3030</bankCode>\n      <ks/>\n      <vs/>\n      <ss/>\n      <date>2018-05-05</date>\n
+        \     <messageForRecipient/>\n      <comment/>\n      <paymentType>431001</paymentType>\n
+        \   </DomesticTransaction>\n  </Orders>\n</Import>\n\r\n--------------------------YU5IeT1XYDoNHP6A--\r\n"
+    headers:
+      Content-Type:
+      - multipart/form-data; boundary=------------------------YU5IeT1XYDoNHP6A
+      Boundary:
+      - "-----------RubyMultipartPost"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 06 Jun 2018 11:14:56 GMT
+      Server:
+      - Apache-Coyote/1.1
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/xml;charset=UTF-8
+      X-Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxyZXNwb25zZUltcG9ydCB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6bm9OYW1lc3BhY2VTY2hlbWFMb2NhdGlvbj0iaHR0cDovL3d3dy5maW8uY3ovc2NoZW1hL3Jlc3BvbnNlSW1wb3J0LnhzZCI+PHJlc3VsdD48ZXJyb3JDb2RlPjE8L2Vycm9yQ29kZT48c3RhdHVzPmVycm9yPC9zdGF0dXM+PHN1bXM+PHN1bSBpZD0iQ1pLIj48c3VtQ3JlZGl0PjA8L3N1bUNyZWRpdD48c3VtRGViZXQ+MTAwLjA8L3N1bURlYmV0Pjwvc3VtPjwvc3Vtcz48L3Jlc3VsdD48b3JkZXJzRGV0YWlscz48ZGV0YWlsIGlkPSIxIj48bWVzc2FnZXM+PG1lc3NhZ2Ugc3RhdHVzPSJlcnJvciIgZXJyb3JDb2RlPSIxNCI+RGF0dW0gcGxhdGJ5IGplIHYgbWludWxvc3RpPC9tZXNzYWdlPjxtZXNzYWdlIHN0YXR1cz0iZXJyb3IiIGVycm9yQ29kZT0iMjciPlogdG9ob3RvIGtvbnRhIG5lbHplIHBvZMOhdmF0IMW+w6FkbsOpIHDFmcOta2F6eS48L21lc3NhZ2U+PG1lc3NhZ2Ugc3RhdHVzPSJlcnJvciIgZXJyb3JDb2RlPSI1NSI+WmFkYW7DqSDEjcOtc2xvIHByb3Rpw7rEjXR1IG5lb2Rwb3bDrWTDoSBwb3Zpbm7DqW11IGZvcm3DoXR1IMSMTkIgYSBOQlMuPC9tZXNzYWdlPjxtZXNzYWdlIHN0YXR1cz0iZXJyb3IiIGVycm9yQ29kZT0iMTA4Ij7EjMOtc2xvIMO6xI10dSBwxZnDrWplbWNlIGplIGlkZW50aWNrw6kgcyDEjcOtc2xlbSDDusSNdHUgcGzDoXRjZS48L21lc3NhZ2U+PG1lc3NhZ2Ugc3RhdHVzPSJ3YXJuaW5nIiBlcnJvckNvZGU9IjE1NyI+VXBvem9ybsSbbsOtOiBwb2TDoXbDoXRlIHBva3luIGsgcGxhdGLEmyB2IG3Em27Emywga3RlcsOhIG5lbsOtIG3Em25vdSB0b2hvdG8gw7rEjXR1LiBaa29udHJvbHVqdGUgcHJvc8OtbSwgemRhIG3DoXRlIHNwcsOhdm7EmyB6dm9sZW5vdSBtxJtudSBWYcWhw60gcGxhdGJ5LjwvbWVzc2FnZT48bWVzc2FnZSBzdGF0dXM9ImVycm9yIiBlcnJvckNvZGU9IjIwMDEiPlZhxaFlIHXFvml2YXRlbHNrw6kgb3Byw6F2bsSbbsOtIG5lcG92b2x1amUgcG9kw6Fuw60gcG9reW51IHogdG9ob3RvIMO6xI10dTwvbWVzc2FnZT48L21lc3NhZ2VzPjwvZGV0YWlsPjwvb3JkZXJzRGV0YWlscz48L3Jlc3BvbnNlSW1wb3J0Pg==
+    http_version:
+  recorded_at: Wed, 06 Jun 2018 11:14:56 GMT
+recorded_with: VCR 4.0.0

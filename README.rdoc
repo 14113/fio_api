@@ -19,9 +19,14 @@ This gem is a wrapper for Fio bank API.
   list.by_date_range(Date.new(2012,11,05), Date.new(2012,12,26))  # Specify listing condition and fetch request
   list.response                                                   # Return deserialized response
 
+=== Request to get transactions form last request
+  list = FioAPI::List.new
+  list.from_last_fetch
+  list.response
+
 === Request transactions by listing_id and year
   list = FioAPI::List.new
-  list.by_listing_id_and_year("43XC6362ASD", 2012)
+  list.by_listing_id_and_year(1, 2012)
   list.response
 
 === Request to set last request id
@@ -35,10 +40,12 @@ This gem is a wrapper for Fio bank API.
   list.response
 
 === Import domestic payments for authorization
-  domestic = FioAPI::Payments::Domestic.new(***)                  # Create new payment
-  service = FioAPI::Payment.new domestic                          # Pass one payment or array of payments
+  payment = FioAPI::Payments::Domestic.new(:account_from, :currency, :amount, :account_to,
+          :bank_code, :ks, :vs, :ss, :date, :message_for_recipient, :comment)
+  service = FioAPI::Payment.new [payment]                         # Pass one payment or array of payments
   service.import                                                  # Call API
   service.response                                                # Return deserialized response with status code etc.
+  service.success?                                                # => true / false
 
 == Contributing to fio_api
 
