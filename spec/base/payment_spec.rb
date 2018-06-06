@@ -14,7 +14,7 @@ describe FioAPI::Payment do
         expect(@service.import).to be_a HTTParty::Response
         expect(@service.request).to be_a HTTParty::Response
         expect(@service.response).to be_a FioAPI::ImportResponseDeserializer
-        expect(@service.valid?).to eq true
+        expect(@service.success?).to eq true
       end
     end
 
@@ -30,7 +30,7 @@ describe FioAPI::Payment do
         expect(@service.import).to be_a HTTParty::Response
         expect(@service.request).to be_a HTTParty::Response
         expect(@service.response).to be_a FioAPI::ImportResponseDeserializer
-        expect(@service.valid?).to eq false
+        expect(@service.success?).to eq false
       end
     end
 
@@ -46,7 +46,7 @@ describe FioAPI::Payment do
         expect(@service.import).to be_a HTTParty::Response
         expect(@service.request).to be_a HTTParty::Response
         expect(@service.response).to be_a FioAPI::ImportResponseDeserializer
-        expect(@service.valid?).to eq false
+        expect(@service.success?).to eq false
       end
     end
 
@@ -62,7 +62,7 @@ describe FioAPI::Payment do
         expect(@service.import).to be_a HTTParty::Response
         expect(@service.request).to be_a HTTParty::Response
         expect(@service.response).to be_a FioAPI::ImportResponseDeserializer
-        expect(@service.valid?).to eq false
+        expect(@service.success?).to eq false
       end
     end
 

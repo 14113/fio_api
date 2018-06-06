@@ -17,8 +17,8 @@ module FioAPI
       self.request
     end
 
-    def valid?
-      response.status&.error_code.zero?
+    def success?
+      response.status.error_code.zero?
     end
 
     private

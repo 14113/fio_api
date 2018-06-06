@@ -45,7 +45,7 @@ This gem is a wrapper for Fio bank API.
   service = FioAPI::Payment.new [payment]                         # Pass one payment or array of payments
   service.import                                                  # Call API
   service.response                                                # Return deserialized response with status code etc.
-  service.valid?                                                  # => true / false
+  service.success?                                                # => true / false
 
 == Contributing to fio_api
 
