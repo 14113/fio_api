@@ -8,6 +8,10 @@ module FioAPI
       def payment_type
         '431001'
       end
+
+      def xml_item_class
+        Xml::DomesticItem
+      end
     end
   end
 end

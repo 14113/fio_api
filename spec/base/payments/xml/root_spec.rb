@@ -33,12 +33,7 @@ describe FioAPI::Payments::Xml::Root do
       <amount>123.1</amount>
       <accountTo>22222222</accountTo>
       <bankCode>3030</bankCode>
-      <ks/>
-      <vs/>
-      <ss/>
       <date>2018-06-15</date>
-      <messageForRecipient/>
-      <comment/>
       <paymentType>431001</paymentType>
     </DomesticTransaction>
     <DomesticTransaction>
@@ -47,12 +42,7 @@ describe FioAPI::Payments::Xml::Root do
       <amount/>
       <accountTo/>
       <bankCode/>
-      <ks/>
-      <vs/>
-      <ss/>
       <date/>
-      <messageForRecipient/>
-      <comment/>
       <paymentType>431001</paymentType>
     </DomesticTransaction>
   </Orders>
