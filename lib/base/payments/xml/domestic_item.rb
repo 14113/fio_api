@@ -17,6 +17,7 @@ module FioAPI
             create_element('date', payment.date)
             maybe_create_element('messageForRecipient', payment.message_for_recipient)
             maybe_create_element('comment', payment.comment)
+            maybe_create_element('paymentReason', payment.payment_reason)
             maybe_create_element('paymentType', payment.payment_type)
           end
         end
