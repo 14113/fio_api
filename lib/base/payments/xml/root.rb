@@ -18,7 +18,8 @@ module FioAPI
             xml.Import(XSI_OPTIONS) do
               xml.Orders do
                 payments.each do |payment|
-                  ::FioAPI::Payments::Xml::Item.new(xml, payment).build
+                  klass = payment.xml_item_class
+                  klass.new(xml, payment).build
                 end
               end
             end
