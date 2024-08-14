@@ -1,53 +1,55 @@
 ---
 http_interactions:
-- request:
-    method: post
-    uri: https://www.fio.cz/ib_api/rest/import/?token=<%= FioAPI.token %>&type=xml
-    body:
-      encoding: UTF-8
-      string: "--------------------------zhBhYIqS35Jglk8M\r\nContent-Disposition:
-        form-data; name=\"file\"; filename=\"20180603-11219-1kw9ccy\"\r\nContent-Type:
-        application/octet-stream\r\n\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Import
-        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.fio.cz/schema/importIB.xsd\">\n
-        \ <Orders>\n    <DomesticTransaction>\n      <accountFrom>11111111</accountFrom>\n
-        \     <currency>CZK</currency>\n      <amount>100.0</amount>\n      <accountTo>22222222</accountTo>\n
-        \     <bankCode>3030</bankCode>\n      <ks/>\n      <vs/>\n      <ss/>\n      <date>2018-06-15</date>\n
-        \     <messageForRecipient/>\n      <comment/>\n      <paymentType>431001</paymentType>\n
-        \   </DomesticTransaction>\n  </Orders>\n</Import>\n\r\n--------------------------zhBhYIqS35Jglk8M--\r\n"
-    headers:
-      Content-Type:
-      - multipart/form-data; boundary=------------------------zhBhYIqS35Jglk8M
-      Boundary:
-      - "-----------RubyMultipartPost"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 02 Jun 2018 23:49:44 GMT
-      Server:
-      - Apache-Coyote/1.1
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Content-Type:
-      - application/xml;charset=UTF-8
-      X-Frame-Options:
-      - SAMEORIGIN
-      Strict-Transport-Security:
-      - max-age=31536000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><responseImport
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.fio.cz/schema/responseImport.xsd"><result><errorCode>0</errorCode><idInstruction>153935923</idInstruction><status>ok</status><sums><sum
-        id="CZK"><sumCredit>0</sumCredit><sumDebet>100.0</sumDebet></sum></sums></result><ordersDetails><detail
-        id="1"><messages><message status="ok" errorCode="0">OK</message></messages></detail></ordersDetails></responseImport>
-    http_version:
-  recorded_at: Sat, 02 Jun 2018 23:49:44 GMT
+  - request:
+      method: post
+      uri: https://fioapi.fio.cz/rest/import/?token=<%= FioAPI.token %>&type=xml
+      body:
+        encoding: UTF-8
+        string:
+          "--------------------------zhBhYIqS35Jglk8M\r\nContent-Disposition:
+          form-data; name=\"file\"; filename=\"20180603-11219-1kw9ccy\"\r\nContent-Type:
+          application/octet-stream\r\n\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Import
+          xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.fio.cz/schema/importIB.xsd\">\n
+          \ <Orders>\n    <DomesticTransaction>\n      <accountFrom>11111111</accountFrom>\n
+          \     <currency>CZK</currency>\n      <amount>100.0</amount>\n      <accountTo>22222222</accountTo>\n
+          \     <bankCode>3030</bankCode>\n      <ks/>\n      <vs/>\n      <ss/>\n      <date>2018-06-15</date>\n
+          \     <messageForRecipient/>\n      <comment/>\n      <paymentType>431001</paymentType>\n
+          \   </DomesticTransaction>\n  </Orders>\n</Import>\n\r\n--------------------------zhBhYIqS35Jglk8M--\r\n"
+      headers:
+        Content-Type:
+          - multipart/form-data; boundary=------------------------zhBhYIqS35Jglk8M
+        Boundary:
+          - "-----------RubyMultipartPost"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Sat, 02 Jun 2018 23:49:44 GMT
+        Server:
+          - Apache-Coyote/1.1
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        Referrer-Policy:
+          - strict-origin-when-cross-origin
+        Content-Type:
+          - application/xml;charset=UTF-8
+        X-Frame-Options:
+          - SAMEORIGIN
+        Strict-Transport-Security:
+          - max-age=31536000
+        Transfer-Encoding:
+          - chunked
+      body:
+        encoding: UTF-8
+        string:
+          <?xml version="1.0" encoding="UTF-8" standalone="yes"?><responseImport
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.fio.cz/schema/responseImport.xsd"><result><errorCode>0</errorCode><idInstruction>153935923</idInstruction><status>ok</status><sums><sum
+          id="CZK"><sumCredit>0</sumCredit><sumDebet>100.0</sumDebet></sum></sums></result><ordersDetails><detail
+          id="1"><messages><message status="ok" errorCode="0">OK</message></messages></detail></ordersDetails></responseImport>
+      http_version:
+    recorded_at: Sat, 02 Jun 2018 23:49:44 GMT
 recorded_with: VCR 4.0.0
