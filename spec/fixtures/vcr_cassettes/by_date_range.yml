@@ -1,47 +1,47 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://www.fio.cz/ib_api/rest/periods/<%= FioAPI.token %>/2011-01-01/2012-11-25/transactions.json
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 02 Jun 2018 21:19:18 GMT
-      Server:
-      - Apache-Coyote/1.1
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      X-Intervalusetoken:
-      - '20000'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Content-Length:
-      - '1253'
-      X-Frame-Options:
-      - SAMEORIGIN
-      Strict-Transport-Security:
-      - max-age=31536000
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJhY2NvdW50U3RhdGVtZW50Ijp7ImluZm8iOnsiYWNjb3VudElkIjoiMjMwMDMxODY1MCIsImJhbmtJZCI6IjIwMTAiLCJjdXJyZW5jeSI6IkNaSyIsImliYW4iOiJDWjc5MjAxMDAwMDAwMDIzMDAzMTg2NTAiLCJiaWMiOiJGSU9CQ1pQUFhYWCIsIm9wZW5pbmdCYWxhbmNlIjowLjAwLCJjbG9zaW5nQmFsYW5jZSI6MTAwLjAwLCJkYXRlU3RhcnQiOiIyMDExLTAxLTAxKzAxMDAiLCJkYXRlRW5kIjoiMjAxMi0xMS0yNSswMTAwIiwieWVhckxpc3QiOm51bGwsImlkTGlzdCI6bnVsbCwiaWRGcm9tIjoxMTYwNTE1NjY5LCJpZFRvIjoxMTYwNTE1NjY5LCJpZExhc3REb3dubG9hZCI6bnVsbH0sInRyYW5zYWN0aW9uTGlzdCI6eyJ0cmFuc2FjdGlvbiI6W3siY29sdW1uMjIiOnsidmFsdWUiOjExNjA1MTU2NjksIm5hbWUiOiJJRCBwb2h5YnUiLCJpZCI6MjJ9LCJjb2x1bW4wIjp7InZhbHVlIjoiMjAxMi0xMC0xOCswMjAwIiwibmFtZSI6IkRhdHVtIiwiaWQiOjB9LCJjb2x1bW4xIjp7InZhbHVlIjoxMDAuMDAsIm5hbWUiOiJPYmplbSIsImlkIjoxfSwiY29sdW1uMTQiOnsidmFsdWUiOiJDWksiLCJuYW1lIjoiTcSbbmEiLCJpZCI6MTR9LCJjb2x1bW4yIjp7InZhbHVlIjoiMjYwMDE3MDIwNSIsIm5hbWUiOiJQcm90acO6xI1ldCIsImlkIjoyfSwiY29sdW1uMTAiOnsidmFsdWUiOiJNYXJ0aW7DrWssIEFkYW0iLCJuYW1lIjoiTsOhemV2IHByb3Rpw7rEjXR1IiwiaWQiOjEwfSwiY29sdW1uMyI6eyJ2YWx1ZSI6IjIwMTAiLCJuYW1lIjoiS8OzZCBiYW5reSIsImlkIjozfSwiY29sdW1uMTIiOnsidmFsdWUiOiJGaW8gYmFua2EsIGEucy4iLCJuYW1lIjoiTsOhemV2IGJhbmt5IiwiaWQiOjEyfSwiY29sdW1uNCI6bnVsbCwiY29sdW1uNSI6bnVsbCwiY29sdW1uNiI6bnVsbCwiY29sdW1uNyI6bnVsbCwiY29sdW1uMTYiOnsidmFsdWUiOiJNaW5pbGFuaSB2a2xhZCBwcm8gRklPIiwibmFtZSI6IlpwcsOhdmEgcHJvIHDFmcOtamVtY2UiLCJpZCI6MTZ9LCJjb2x1bW44Ijp7InZhbHVlIjoiUMWZw61qZW0gcMWZZXZvZGVtIHV2bml0xZkgYmFua3kiLCJuYW1lIjoiVHlwIiwiaWQiOjh9LCJjb2x1bW45IjpudWxsLCJjb2x1bW4xOCI6bnVsbCwiY29sdW1uMjUiOnsidmFsdWUiOiJNaW5pbGFuaSB2a2xhZCBwcm8gRklPIiwibmFtZSI6IktvbWVudMOhxZkiLCJpZCI6MjV9LCJjb2x1bW4yNiI6bnVsbCwiY29sdW1uMTciOnsidmFsdWUiOjIxNjM3MzEwNTEsIm5hbWUiOiJJRCBwb2t5bnUiLCJpZCI6MTd9fV19fX0=
-    http_version:
-  recorded_at: Sat, 02 Jun 2018 21:19:19 GMT
+  - request:
+      method: get
+      uri: https://fioapi.fio.cz/rest/periods/<%= FioAPI.token %>/2011-01-01/2012-11-25/transactions.json
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Sat, 02 Jun 2018 21:19:18 GMT
+        Server:
+          - Apache-Coyote/1.1
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        Referrer-Policy:
+          - strict-origin-when-cross-origin
+        X-Intervalusetoken:
+          - "20000"
+        Content-Type:
+          - application/json;charset=UTF-8
+        Content-Length:
+          - "1253"
+        X-Frame-Options:
+          - SAMEORIGIN
+        Strict-Transport-Security:
+          - max-age=31536000
+      body:
+        encoding: ASCII-8BIT
+        string: !binary |-
+          eyJhY2NvdW50U3RhdGVtZW50Ijp7ImluZm8iOnsiYWNjb3VudElkIjoiMjMwMDMxODY1MCIsImJhbmtJZCI6IjIwMTAiLCJjdXJyZW5jeSI6IkNaSyIsImliYW4iOiJDWjc5MjAxMDAwMDAwMDIzMDAzMTg2NTAiLCJiaWMiOiJGSU9CQ1pQUFhYWCIsIm9wZW5pbmdCYWxhbmNlIjowLjAwLCJjbG9zaW5nQmFsYW5jZSI6MTAwLjAwLCJkYXRlU3RhcnQiOiIyMDExLTAxLTAxKzAxMDAiLCJkYXRlRW5kIjoiMjAxMi0xMS0yNSswMTAwIiwieWVhckxpc3QiOm51bGwsImlkTGlzdCI6bnVsbCwiaWRGcm9tIjoxMTYwNTE1NjY5LCJpZFRvIjoxMTYwNTE1NjY5LCJpZExhc3REb3dubG9hZCI6bnVsbH0sInRyYW5zYWN0aW9uTGlzdCI6eyJ0cmFuc2FjdGlvbiI6W3siY29sdW1uMjIiOnsidmFsdWUiOjExNjA1MTU2NjksIm5hbWUiOiJJRCBwb2h5YnUiLCJpZCI6MjJ9LCJjb2x1bW4wIjp7InZhbHVlIjoiMjAxMi0xMC0xOCswMjAwIiwibmFtZSI6IkRhdHVtIiwiaWQiOjB9LCJjb2x1bW4xIjp7InZhbHVlIjoxMDAuMDAsIm5hbWUiOiJPYmplbSIsImlkIjoxfSwiY29sdW1uMTQiOnsidmFsdWUiOiJDWksiLCJuYW1lIjoiTcSbbmEiLCJpZCI6MTR9LCJjb2x1bW4yIjp7InZhbHVlIjoiMjYwMDE3MDIwNSIsIm5hbWUiOiJQcm90acO6xI1ldCIsImlkIjoyfSwiY29sdW1uMTAiOnsidmFsdWUiOiJNYXJ0aW7DrWssIEFkYW0iLCJuYW1lIjoiTsOhemV2IHByb3Rpw7rEjXR1IiwiaWQiOjEwfSwiY29sdW1uMyI6eyJ2YWx1ZSI6IjIwMTAiLCJuYW1lIjoiS8OzZCBiYW5reSIsImlkIjozfSwiY29sdW1uMTIiOnsidmFsdWUiOiJGaW8gYmFua2EsIGEucy4iLCJuYW1lIjoiTsOhemV2IGJhbmt5IiwiaWQiOjEyfSwiY29sdW1uNCI6bnVsbCwiY29sdW1uNSI6bnVsbCwiY29sdW1uNiI6bnVsbCwiY29sdW1uNyI6bnVsbCwiY29sdW1uMTYiOnsidmFsdWUiOiJNaW5pbGFuaSB2a2xhZCBwcm8gRklPIiwibmFtZSI6IlpwcsOhdmEgcHJvIHDFmcOtamVtY2UiLCJpZCI6MTZ9LCJjb2x1bW44Ijp7InZhbHVlIjoiUMWZw61qZW0gcMWZZXZvZGVtIHV2bml0xZkgYmFua3kiLCJuYW1lIjoiVHlwIiwiaWQiOjh9LCJjb2x1bW45IjpudWxsLCJjb2x1bW4xOCI6bnVsbCwiY29sdW1uMjUiOnsidmFsdWUiOiJNaW5pbGFuaSB2a2xhZCBwcm8gRklPIiwibmFtZSI6IktvbWVudMOhxZkiLCJpZCI6MjV9LCJjb2x1bW4yNiI6bnVsbCwiY29sdW1uMTciOnsidmFsdWUiOjIxNjM3MzEwNTEsIm5hbWUiOiJJRCBwb2t5bnUiLCJpZCI6MTd9fV19fX0=
+      http_version:
+    recorded_at: Sat, 02 Jun 2018 21:19:19 GMT
 recorded_with: VCR 4.0.0

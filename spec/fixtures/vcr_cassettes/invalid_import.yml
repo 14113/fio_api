@@ -1,51 +1,52 @@
 ---
 http_interactions:
-- request:
-    method: post
-    uri: https://www.fio.cz/ib_api/rest/import/?token=<%= FioAPI.token %>&type=xml
-    body:
-      encoding: UTF-8
-      string: "--------------------------8kR1u87fzZKMC9tT\r\nContent-Disposition:
-        form-data; name=\"file\"; filename=\"20180603-18534-1yh8r7y\"\r\nContent-Type:
-        application/octet-stream\r\n\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Import
-        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.fio.cz/schema/importIB.xsd\">\n
-        \ <Orders>\n    <DomesticTransaction>\n      <accountFrom>11111111</accountFrom>\n
-        \     <currency>CZK</currency>\n      <amount/>\n      <accountTo>22222222</accountTo>\n
-        \     <bankCode>3030</bankCode>\n      <ks/>\n      <vs/>\n      <ss/>\n      <date>2018-06-15</date>\n
-        \     <messageForRecipient/>\n      <comment/>\n      <paymentType>431001</paymentType>\n
-        \   </DomesticTransaction>\n  </Orders>\n</Import>\n\r\n--------------------------8kR1u87fzZKMC9tT--\r\n"
-    headers:
-      Content-Type:
-      - multipart/form-data; boundary=------------------------8kR1u87fzZKMC9tT
-      Boundary:
-      - "-----------RubyMultipartPost"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sun, 03 Jun 2018 12:28:55 GMT
-      Server:
-      - Apache-Coyote/1.1
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Content-Type:
-      - application/xml;charset=UTF-8
-      X-Frame-Options:
-      - SAMEORIGIN
-      Strict-Transport-Security:
-      - max-age=31536000
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxyZXNwb25zZUltcG9ydCB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6bm9OYW1lc3BhY2VTY2hlbWFMb2NhdGlvbj0iaHR0cDovL3d3dy5maW8uY3ovc2NoZW1hL3Jlc3BvbnNlSW1wb3J0LnhzZCI+PHJlc3VsdD48ZXJyb3JDb2RlPjExPC9lcnJvckNvZGU+PHN0YXR1cz5lcnJvcjwvc3RhdHVzPjxtZXNzYWdlPlNvdWJvciBtw6EgY2h5YnkgdmUgc3RydWt0dcWZZTogY3ZjLWRhdGF0eXBlLXZhbGlkLjEuMi4xOiAnJyBpcyBub3QgYSB2YWxpZCB2YWx1ZSBmb3IgJ2RlY2ltYWwnLjwvbWVzc2FnZT48L3Jlc3VsdD48L3Jlc3BvbnNlSW1wb3J0Pg==
-    http_version:
-  recorded_at: Sun, 03 Jun 2018 12:28:55 GMT
+  - request:
+      method: post
+      uri: https://fioapi.fio.cz/rest/import/?token=<%= FioAPI.token %>&type=xml
+      body:
+        encoding: UTF-8
+        string:
+          "--------------------------8kR1u87fzZKMC9tT\r\nContent-Disposition:
+          form-data; name=\"file\"; filename=\"20180603-18534-1yh8r7y\"\r\nContent-Type:
+          application/octet-stream\r\n\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Import
+          xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.fio.cz/schema/importIB.xsd\">\n
+          \ <Orders>\n    <DomesticTransaction>\n      <accountFrom>11111111</accountFrom>\n
+          \     <currency>CZK</currency>\n      <amount/>\n      <accountTo>22222222</accountTo>\n
+          \     <bankCode>3030</bankCode>\n      <ks/>\n      <vs/>\n      <ss/>\n      <date>2018-06-15</date>\n
+          \     <messageForRecipient/>\n      <comment/>\n      <paymentType>431001</paymentType>\n
+          \   </DomesticTransaction>\n  </Orders>\n</Import>\n\r\n--------------------------8kR1u87fzZKMC9tT--\r\n"
+      headers:
+        Content-Type:
+          - multipart/form-data; boundary=------------------------8kR1u87fzZKMC9tT
+        Boundary:
+          - "-----------RubyMultipartPost"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Sun, 03 Jun 2018 12:28:55 GMT
+        Server:
+          - Apache-Coyote/1.1
+        X-Content-Type-Options:
+          - nosniff
+        X-Xss-Protection:
+          - 1; mode=block
+        Referrer-Policy:
+          - strict-origin-when-cross-origin
+        Content-Type:
+          - application/xml;charset=UTF-8
+        X-Frame-Options:
+          - SAMEORIGIN
+        Strict-Transport-Security:
+          - max-age=31536000
+        Transfer-Encoding:
+          - chunked
+      body:
+        encoding: ASCII-8BIT
+        string: !binary |-
+          PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxyZXNwb25zZUltcG9ydCB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6bm9OYW1lc3BhY2VTY2hlbWFMb2NhdGlvbj0iaHR0cDovL3d3dy5maW8uY3ovc2NoZW1hL3Jlc3BvbnNlSW1wb3J0LnhzZCI+PHJlc3VsdD48ZXJyb3JDb2RlPjExPC9lcnJvckNvZGU+PHN0YXR1cz5lcnJvcjwvc3RhdHVzPjxtZXNzYWdlPlNvdWJvciBtw6EgY2h5YnkgdmUgc3RydWt0dcWZZTogY3ZjLWRhdGF0eXBlLXZhbGlkLjEuMi4xOiAnJyBpcyBub3QgYSB2YWxpZCB2YWx1ZSBmb3IgJ2RlY2ltYWwnLjwvbWVzc2FnZT48L3Jlc3VsdD48L3Jlc3BvbnNlSW1wb3J0Pg==
+      http_version:
+    recorded_at: Sun, 03 Jun 2018 12:28:55 GMT
 recorded_with: VCR 4.0.0
