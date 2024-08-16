@@ -6,7 +6,7 @@
 
 Gem::Specification.new do |s|
   s.name = "fio_api".freeze
-  s.version = "0.0.7"
+  s.version = "0.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
