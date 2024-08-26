@@ -2,7 +2,7 @@
 http_interactions:
   - request:
       method: get
-      uri: https://fioapi.fio.cz/rest/set-last-date/<%= FioAPI.token %>/2012-11-25/
+      uri: https://fioapi.fio.cz/v1/rest/set-last-date/<%= FioAPI.token %>/2012-11-25/
       body:
         encoding: US-ASCII
         string: ""

@@ -4,7 +4,7 @@ module FioAPI
   class Request < FioAPI::Base
     include HTTParty
 
-    base_uri 'https://fioapi.fio.cz/rest/'
+    base_uri 'https://fioapi.fio.cz/v1/rest/'
 
     class << self
       # Reader for token

@@ -14,7 +14,7 @@ module FioAPI
     # == Returns:
     #   List insatnce with account info and transactions list
     #
-    # https://fioapi.fio.cz/rest/periods/(token)/(date_from)/(date_to)/transactions.(format)
+    # https://fioapi.fio.cz/v1/rest/periods/(token)/(date_from)/(date_to)/transactions.(format)
     def by_date_range(from_date, to_date)
       fetch_and_deserialize_response("/periods/#{FioAPI.token}/#{from_date}/#{to_date}/transactions.json")
     end
@@ -30,7 +30,7 @@ module FioAPI
     # == Returns:
     #   List insatnce with account info and transactions list
     #
-    # https://fioapi.fio.cz/rest/by-id/(token)/(year)/(id)/transactions.(format)
+    # https://fioapi.fio.cz/v1/rest/by-id/(token)/(year)/(id)/transactions.(format)
     def by_listing_id_and_year(listing_id, year)
       fetch_and_deserialize_response("/by-id/#{FioAPI.token}/#{year}/#{listing_id}/transactions.json")
     end
@@ -40,7 +40,7 @@ module FioAPI
     # == Returns:
     #   List insatnce with account info and transactions list
     #
-    # https://fioapi.fio.cz/rest/last/(token)/transactions.(format)
+    # https://fioapi.fio.cz/v1/rest/last/(token)/transactions.(format)
     def from_last_fetch
       fetch_and_deserialize_response("/last/#{FioAPI.token}/transactions.json")
     end
@@ -54,7 +54,7 @@ module FioAPI
     # == Returns:
     #   List insatnce with account info and transactions list
     #
-    # https://fioapi.fio.cz/rest/set-last-id/(token)/(id)/
+    # https://fioapi.fio.cz/v1/rest/set-last-id/(token)/(id)/
     def set_last_fetch_id(transaction_id)
       fetch_and_deserialize_response("/set-last-id/#{FioAPI.token}/#{transaction_id}/")
     end
@@ -68,7 +68,7 @@ module FioAPI
     # == Returns:
     #   List insatnce with account info and transactions list
     #
-    # https://fioapi.fio.cz/rest/set-last-date/(token)/(rrrr-mm-dd)/
+    # https://fioapi.fio.cz/v1/rest/set-last-date/(token)/(rrrr-mm-dd)/
     def set_last_fetch_date(date)
       fetch_and_deserialize_response("/set-last-date/#{FioAPI.token}/#{date}/")
     end
