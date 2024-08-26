@@ -2,7 +2,7 @@
 http_interactions:
   - request:
       method: get
-      uri: https://fioapi.fio.cz/rest/set-last-id/<%= FioAPI.token %>/12345/
+      uri: https://fioapi.fio.cz/v1/rest/set-last-id/<%= FioAPI.token %>/12345/
       body:
         encoding: US-ASCII
         string: ""

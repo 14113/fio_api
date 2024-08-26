@@ -2,7 +2,7 @@
 http_interactions:
   - request:
       method: get
-      uri: https://fioapi.fio.cz/rest/by-id/<%= FioAPI.token %>/2012/12345/transactions.json
+      uri: https://fioapi.fio.cz/v1/rest/by-id/<%= FioAPI.token %>/2012/12345/transactions.json
       body:
         encoding: US-ASCII
         string: ""

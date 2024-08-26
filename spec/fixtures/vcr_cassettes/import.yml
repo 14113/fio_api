@@ -2,7 +2,7 @@
 http_interactions:
   - request:
       method: post
-      uri: https://fioapi.fio.cz/rest/import/?token=<%= FioAPI.token %>&type=xml
+      uri: https://fioapi.fio.cz/v1/rest/import/?token=<%= FioAPI.token %>&type=xml
       body:
         encoding: UTF-8
         string:
