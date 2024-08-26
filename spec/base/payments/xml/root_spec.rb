@@ -19,7 +19,9 @@ describe FioAPI::Payments::Xml::Root do
     let(:payments) do
       [
         FioAPI::Payments::Domestic.new(account_from: '11111111', currency: 'CZK', amount: 123.1, account_to: '22222222', bank_code: '3030', date: '2018-06-15'),
-        FioAPI::Payments::Domestic.new
+        FioAPI::Payments::Domestic.new,
+        FioAPI::Payments::Euro.new(account_from: '12345678', currency: 'EUR', amount: 12.34, account_to: 'SK121234123412341234', date: '2018-06-15'),
+        FioAPI::Payments::Euro.new,
       ]
     end
     it 'returns empty xml' do
@@ -33,12 +35,7 @@ describe FioAPI::Payments::Xml::Root do
       <amount>123.1</amount>
       <accountTo>22222222</accountTo>
       <bankCode>3030</bankCode>
-      <ks/>
-      <vs/>
-      <ss/>
       <date>2018-06-15</date>
-      <messageForRecipient/>
-      <comment/>
       <paymentType>431001</paymentType>
     </DomesticTransaction>
     <DomesticTransaction>
@@ -47,14 +44,27 @@ describe FioAPI::Payments::Xml::Root do
       <amount/>
       <accountTo/>
       <bankCode/>
-      <ks/>
-      <vs/>
-      <ss/>
       <date/>
-      <messageForRecipient/>
-      <comment/>
       <paymentType>431001</paymentType>
     </DomesticTransaction>
+    <T2Transaction>
+      <accountFrom>12345678</accountFrom>
+      <currency>EUR</currency>
+      <amount>12.34</amount>
+      <accountTo>SK121234123412341234</accountTo>
+      <date>2018-06-15</date>
+      <benefName/>
+      <paymentType>431008</paymentType>
+    </T2Transaction>
+    <T2Transaction>
+      <accountFrom/>
+      <currency/>
+      <amount/>
+      <accountTo/>
+      <date/>
+      <benefName/>
+      <paymentType>431008</paymentType>
+    </T2Transaction>
   </Orders>
 </Import>
       XML
