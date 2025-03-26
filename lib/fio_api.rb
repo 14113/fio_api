@@ -18,7 +18,7 @@ module FioAPI
   # == Returns:
   # A string with current version of gem
   #
-  VERSION = '0.0.10'.freeze
+  VERSION = '0.0.11'.freeze
 
   # Set API token for requests
   #
