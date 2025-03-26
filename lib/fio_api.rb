@@ -12,12 +12,13 @@ require 'base/payments/xml/root'
 require 'base/payments/xml/item'
 require 'base/deserializers/list_response_deserializer'
 require 'base/deserializers/import_response_deserializer'
+require 'base/errors/invalid_json_response'
 
 module FioAPI
   # == Returns:
   # A string with current version of gem
   #
-  VERSION = '0.0.6'.freeze
+  VERSION = '0.0.10'.freeze
 
   # Set API token for requests
   #
