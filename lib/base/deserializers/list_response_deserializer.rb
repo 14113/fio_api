@@ -26,7 +26,7 @@ module FioAPI
     #   New object with account and transactions attributes
     #
     def deserialize(json)
-      return self if json.is_a?(String)
+      raise FioAPI::InvalidJsonResponse.new(json) if json.is_a?(String)
 
       self.account = deserialize_account(json.try_path('accountStatement', 'info'))
       self.transactions = deserialize_transactions(json.try_path('accountStatement', 'transactionList', 'transaction'))
